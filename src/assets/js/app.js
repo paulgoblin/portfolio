@@ -1,5 +1,14 @@
 $(document).foundation();
-$(document).ready(function(){
-    console.log('Foundation Core Version: ' + Foundation.version);
-    $('.fade').hide().fadeIn('slow');
-});
+$(document).ready(init);
+
+function init() {
+  $('.fade').hide().fadeIn('slow');
+  $('.menuBar .local').click(smoothScroll);
+}
+
+function smoothScroll(e){
+  $('html, body').animate({
+    scrollTop: $( $(e.target).attr('href') ).offset().top
+  }, 500);
+  return false;
+}

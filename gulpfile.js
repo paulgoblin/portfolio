@@ -62,7 +62,7 @@ gulp.task('clean', function(done) {
   rimraf('dist', done);
 });
 
-// Browser Sync wrapper task 
+// Browser Sync wrapper task
 // allows for proper injection of css files
 gulp.task('reload', function(cb) {
   browser.reload();
@@ -166,7 +166,7 @@ gulp.task('build', function(done) {
 // Start a server with LiveReload to preview the site in
 gulp.task('server', ['build'], function() {
   browser.init({
-    server: 'dist', port: PORT
+    server: 'dist', port: PORT, notify: false
   });
 });
 
