@@ -49,6 +49,12 @@
 //   border: 1px solid red;
 // }
 
+.CTA{
+  // background: inherit;
+  font-weight: $global-weight-bold;
+  font-size: $lead-font-size;
+}
+
 .menuBar {
   * {
     background: transparent;
@@ -58,7 +64,7 @@
     font-weight: $global-weight-bold;
   }
   .logo {
-    padding-left: 1em;
+    padding-left: 1rem;
   }
 }
 
@@ -74,15 +80,14 @@ $projects-background: $body-font-color;
 }
 
 .backgroundImg {
-  background-color: cyan;
+  background-color: #BEFEFE;
   background-position: center;
   // background-image: url('../img/introBackground.jpg');
   z-index: -9999;
 }
 
 .backgroundFilter {
-  background-color: $body-background;
-  opacity: .75;
+  background-color: $body-background;;
   z-index: -9998;
 }
 

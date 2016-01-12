@@ -2,8 +2,8 @@ $(document).foundation();
 $(document).ready(init);
 
 function init() {
-  $('.fade').hide().fadeIn('slow');
-  $('.menuBar .local').click(smoothScroll);
+  $('.fade').fadeOut('slow');
+  $('a.local').click(smoothScroll);
 }
 
 function smoothScroll(e){
