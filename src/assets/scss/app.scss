@@ -49,15 +49,34 @@
 //   border: 1px solid red;
 // }
 
-.CTA{
-  // background: inherit;
-  font-weight: $global-weight-bold;
-  font-size: $lead-font-size;
+
+$hero-font-color: $body-background;
+$projects-font-color: $body-font-color;
+$projects-background: $body-background;
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
-.menuBar {
+.backgroundImg {
+  background-color: $primary-color;
+  background-position: center;
+  // background-image: url('../img/introBackground.jpg');
+  z-index: -9999;
+}
+
+.backgroundFilter {
+  background-color: $body-background;
+  z-index: -9998;
+}
+
+
+#header {
   * {
     background: transparent;
+    color: $hero-font-color;
   }
   .navBtn {
     margin: 0 1rem;
@@ -68,39 +87,20 @@
   }
 }
 
-$hero-font-color: $body-font-color;
-$hero-background: $body-background;
-$projects-font-color: $body-background;
-$projects-background: $body-font-color;
-
-.background {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
-.backgroundImg {
-  background-color: #BEFEFE;
-  background-position: center;
-  // background-image: url('../img/introBackground.jpg');
-  z-index: -9999;
-}
-
-.backgroundFilter {
-  background-color: $body-background;;
-  z-index: -9998;
-}
-
-#hero{
+#hero {
+  * {
+    color: $hero-font-color;
+  }
   height: 90%;
   width: 100%;
 }
 
+
 #projects {
   height: 300%;
   width: 100%;
-  background-color: $black;
-  color: $white;
+  background-color: $body-background;
+  color: $body-font-color;
 }
 
 #about {
