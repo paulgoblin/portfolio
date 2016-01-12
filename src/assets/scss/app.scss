@@ -95,12 +95,17 @@ $projects-background: $body-background;
   width: 100%;
 }
 
+#intro{
+  height: 90%;
+}
+
 
 #projects {
-  height: 300%;
+  min-height: 50%;
   width: 100%;
   background-color: $body-background;
   color: $body-font-color;
+
 }
 
 #about {
