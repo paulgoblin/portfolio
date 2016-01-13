@@ -126,11 +126,11 @@ $projects-background: $body-background;
   }
 }
 
-#about {
+#contact {
   height: 100%;
   .filter {
     position: absolute;
-    background-image: url('assets/img/marble.jpg');
+    background-image: url('../img/marble.jpg');
     height: 100%;
     width: 100%;
     z-index: 1;

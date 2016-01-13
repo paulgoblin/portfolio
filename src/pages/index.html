@@ -1,5 +1,44 @@
-{{> header}}
-{{> hero}}
-{{> projects}}
-{{> about}}
-{{> footer}}
+<div id="hero">
+  <div id="intro" class="row align-middle align-center">
+    <div class="medium-8 columns small-centered text-center">
+      <h1>Paul Richter</h1>
+      <h4>Full stack JS developer</h4>
+      <div class="text-center">
+        <a href="#projects" class="local button">
+          VIEW PROJECTS
+        </a>
+        <a href="#contact" class="local button">
+          CONTACT
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="projects">
+  <div class="row align-center">
+    <div class="column small-12 medium-10 xlarge-12">
+      {{#each projects}}
+        <div class="row align-middle projectContainer">
+          <div class="column small-12 medium-6 large-4 screenShot">
+            <a href="{{deployLink}}">
+              <img src="{{root}}assets/img/{{imageUrl}}" target="_blank" alt="">
+            </a>
+          </div>
+          <div class="columns description">
+            <h3 class="projectTitle">{{title}}</h3>
+            <p>{{description}}</p>
+            <a href="{{repoLink}}" class="repoLink">
+              <small>GITHUB REPO</small> <img class="octicon" src="assets/img/svg/repo.svg"/>
+            </a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<div id="contact">
+  <div class="filter"></div>
+
+</div>
