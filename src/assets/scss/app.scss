@@ -105,7 +105,13 @@ $projects-background: $body-background;
   width: 100%;
   background-color: $body-background;
   color: $body-font-color;
-
+  padding: 0 2em;
+  .screenShot img{
+    width: 100%;
+  }
+  .projectContainer{
+    margin: 6em 0em;
+  }
 }
 
 #about {
