@@ -1,0 +1,13 @@
+#header {
+  * {
+    background: transparent;
+    color: $hero-font-color;
+  }
+  .navBtn {
+    margin: 0 1rem;
+    font-weight: $global-weight-bold;
+  }
+  .logo {
+    padding-left: 1rem;
+  }
+}

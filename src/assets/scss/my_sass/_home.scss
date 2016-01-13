@@ -1,0 +1,52 @@
+
+#hero {
+  height: 90%;
+  width: 100%;
+
+  * {
+    color: $hero-font-color;
+  }
+}
+
+#intro{
+  height: 90%;
+}
+
+#projects {
+  min-height: 50%;
+  width: 100%;
+  background-color: $body-background;
+  color: $body-font-color;
+  padding: 2em;
+  .screenShot img{
+    width: 100%;
+  }
+  .projectContainer{
+    padding: 4em 0em;
+    &:nth-child(even) {
+      .screenShot {
+        order:1;
+      }
+    }
+  }
+  .repoLink {
+    float: right;
+    font-weight: $global-weight-bold;
+    color: $dark-gray;
+    text-decoration: underline;
+  }
+}
+
+#contact {
+  height: 100%;
+  .filter {
+    position: absolute;
+    background-image: url('../img/marble.jpg');
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+  background-color: $body-font-color;
+  color: $body-background;
+  min-height: 500px;
+}

@@ -1,0 +1,13 @@
+#footer { background-color: $warning-color; }
+#footer > div {
+  height: 10em;
+  width: 100%;
+  color: $dark-gray;
+  p > small {
+    padding: 0 1.5em;
+  }
+  a {
+    color: $dark-gray;
+    text-decoration: underline;
+  }
+}
