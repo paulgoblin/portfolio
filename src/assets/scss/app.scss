@@ -127,6 +127,14 @@ $projects-background: $body-background;
 }
 
 #about {
+  height: 100%;
+  .filter {
+    position: absolute;
+    background-image: url('assets/img/marble.jpg');
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
   background-color: $body-font-color;
   color: $body-background;
   min-height: 500px;
@@ -134,6 +142,7 @@ $projects-background: $body-background;
 
 #footer > div {
   height: 10em;
+  width: 100%;
   background-color: $warning-color;
   color: $dark-gray;
   p > small {
