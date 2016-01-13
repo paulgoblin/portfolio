@@ -127,9 +127,20 @@ $projects-background: $body-background;
 }
 
 #about {
-
+  background-color: $body-font-color;
+  color: $body-background;
+  min-height: 500px;
 }
 
-#footer {
-
+#footer > div {
+  height: 10em;
+  background-color: $warning-color;
+  color: $dark-gray;
+  p > small {
+    padding: 0 1.5em;
+  }
+  a {
+    color: $dark-gray;
+    text-decoration: underline;
+  }
 }
