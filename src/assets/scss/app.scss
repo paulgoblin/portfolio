@@ -45,14 +45,14 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-// div {
-//   border: 1px solid red;
-// }
-
-
 $hero-font-color: $body-background;
 $projects-font-color: $body-font-color;
 $projects-background: $body-background;
+
+.button {
+  border-radius: 4px;
+}
+
 
 .background {
   position: fixed;
@@ -106,17 +106,23 @@ $projects-background: $body-background;
   width: 100%;
   background-color: $body-background;
   color: $body-font-color;
-  padding: 0 2em;
+  padding: 2em;
   .screenShot img{
     width: 100%;
   }
   .projectContainer{
-    margin: 6em 0em;
-    &:nth-child(2) {
+    padding: 4em 0em;
+    &:nth-child(even) {
       .screenShot {
         order:1;
       }
     }
+  }
+  .repoLink {
+    float: right;
+    font-weight: $global-weight-bold;
+    color: $dark-gray;
+    text-decoration: underline;
   }
 }
 

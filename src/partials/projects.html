@@ -4,11 +4,16 @@
       {{#each projects}}
         <div class="row align-middle projectContainer">
           <div class="column small-12 medium-6 large-4 screenShot">
-            <img src="{{root}}assets/img/{{imageUrl}}" alt="">
+            <a href="{{deployLink}}">
+              <img src="{{root}}assets/img/{{imageUrl}}" target="_blank" alt="">
+            </a>
           </div>
-          <div class="column sdescription">
+          <div class="columns description">
             <h3 class="projectTitle">{{title}}</h3>
             <p>{{description}}</p>
+            <a href="{{repoLink}}" class="repoLink">
+              <small>GITHUB REPO</small> <img class="octicon" src="assets/img/svg/repo.svg"/>
+            </a>
           </div>
         </div>
       {{/each}}

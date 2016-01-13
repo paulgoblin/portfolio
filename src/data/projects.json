@@ -4,13 +4,31 @@
     "title": "Tower of Hanoi",
     "description":"With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.",
     "imageUrl":"projects/towerofhanoi.png",
-    "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
+    "deployLink":"http://paulgoblin.github.io/diskOfHanoi",
+    "repoLink":"https://github.com/paulgoblin/diskOfHanoi"
   },
   "2":
   {
     "title": "Tower of Hanoi",
     "description":"With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.",
     "imageUrl":"projects/towerofhanoi.png",
+    "repoLink":"https://github.com/paulgoblin/diskOfHanoi",
+    "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
+  },
+  "3":
+  {
+    "title": "Tower of Hanoi",
+    "description":"With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.",
+    "imageUrl":"projects/towerofhanoi.png",
+    "repoLink":"https://github.com/paulgoblin/diskOfHanoi",
+    "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
+  },
+  "4":
+  {
+    "title": "Tower of Hanoi",
+    "description":"With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.",
+    "imageUrl":"projects/towerofhanoi.png",
+    "repoLink":"https://github.com/paulgoblin/diskOfHanoi",
     "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
   }
 }
