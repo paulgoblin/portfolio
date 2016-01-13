@@ -88,11 +88,12 @@ $projects-background: $body-background;
 }
 
 #hero {
+  height: 90%;
+  width: 100%;
+
   * {
     color: $hero-font-color;
   }
-  height: 90%;
-  width: 100%;
 }
 
 #intro{
@@ -111,6 +112,11 @@ $projects-background: $body-background;
   }
   .projectContainer{
     margin: 6em 0em;
+    &:nth-child(2) {
+      .screenShot {
+        order:1;
+      }
+    }
   }
 }
 

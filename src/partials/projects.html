@@ -1,17 +1,17 @@
 <div id="projects">
   <div class="row align-center">
     <div class="column small-12 medium-10 xlarge-12">
-      <div class="row projectContainer">
-        <div class="column small-12 medium-6 large-4 screenShot">
-          <img src="https://aidanjreid.files.wordpress.com/2014/12/mine1.gif" alt="">
-        </div>
-        <div class="column description">
-          <h3 class="projectTitle">This is a dope project</h3>
-          <p>With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser
-            And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.</p>
+      {{#each projects}}
+        <div class="row align-middle projectContainer">
+          <div class="column small-12 medium-6 large-4 screenShot">
+            <img src="{{root}}assets/img/{{imageUrl}}" alt="">
+          </div>
+          <div class="column sdescription">
+            <h3 class="projectTitle">{{title}}</h3>
+            <p>{{description}}</p>
           </div>
         </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </div>
