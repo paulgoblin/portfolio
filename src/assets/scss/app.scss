@@ -140,10 +140,10 @@ $projects-background: $body-background;
   min-height: 500px;
 }
 
+#footer { background-color: $warning-color; }
 #footer > div {
   height: 10em;
   width: 100%;
-  background-color: $warning-color;
   color: $dark-gray;
   p > small {
     padding: 0 1.5em;
