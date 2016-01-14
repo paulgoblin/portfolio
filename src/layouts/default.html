@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
   <body id='page'>
-
-    <div class="fade background backgroundFilter"></div>
+    {{#ifpage 'index'}}
+      <div class="fade background backgroundFilter"></div>
+    {{/ifpage}}
     {{> header}}
     {{> body}}
     {{> footer}}
