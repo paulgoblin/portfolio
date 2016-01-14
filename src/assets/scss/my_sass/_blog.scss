@@ -3,23 +3,27 @@
   min-height: 100%;
   background-color: $body-background;
   color: $body-font-color;
-  padding: 2em;
+  padding: 3em 0;
   .blogHead {
-    height: 30vh;
+    padding: 2em;
     .blogTitle {
       margin-bottom: 0;
     }
     .blogSubtitle {
     }
-    .socialLinkContainer {
+    .socialLinkBar {
       padding: 1em;
-      border-bottom: 2px solid $primary-color;
+      // border-bottom: 2px solid $primary-color;
     }
   }
   .article {
     margin-top: 1em;
     padding-bottom: 1em;
     border-bottom: 1px solid $light-gray;
+    &:first-child{
+      padding-top: 1em;
+      border-top: 1px solid $light-gray;
+    }
   }
   .date {
     color: $dark-gray;
