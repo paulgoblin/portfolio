@@ -7,20 +7,13 @@
     </div>
   </div>
   <div class="row blogListItem align-center">
-
-    <div class="article column small-10 medium-8 large-6 text-center">
-      <span class="date"> Jan 13, 2016</span>
-      <h4 class="title">
-        How to do Awesome Things in Node.js
-      </h4>
-    </div>
-    <div class="column small-12"></div>
-    <div class="article column small-10 medium-8 large-6 text-center">
-      <span class="date"> Jan 13, 2016</span>
-      <h4 class="title">
-        How to do Awesome Things in Node.js
-      </h4>
-    </div>
-  </div>
-  
+    {{#each blogs}}
+      <div class="article column small-10 medium-8 large-6 text-center">
+        <span class="date">{{date}}</span>
+        <h4 class="title">
+          {{title}}
+        </h4>
+      </div>
+      <div class="column small-12"></div>
+    {{/each}}
 </div>

@@ -1,7 +1,10 @@
-#footer { background-color: $warning-color; }
-#footer > div {
+#footer {
+  background-color: $warning-color;
   height: 10em;
   width: 100%;
+}
+#footer > div {
+  height: 100%;
   color: $dark-gray;
   p > small {
     padding: 0 1.5em;
