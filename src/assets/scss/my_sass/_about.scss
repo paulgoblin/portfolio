@@ -1,21 +1,28 @@
-#hero {
-  height: 90%;
+#about {
   width: 100%;
-  background: $primary-color;
+  background-color: $primary-color;
+  padding: 3em 0 3em;
   * {
-    color: $hero-font-color;
+    color: $body-background;
   }
-  .CTA {
-    padding-left: 1em;
-    padding-right: 1em;
+  .aboutHead {
+    padding: 2em;
+    .aboutTitle {
+      margin-bottom: 0;
+    }
+    .aboutSubtitle {
+    }
+    .socialLinkBar {
+      padding: 1em;
+      color: $body-background;
+      img {
+        -webkit-filter: invert(1);
+        filter: invert(1);
+      }
+    }
   }
 }
-
-#intro{
-  height: 90%;
-}
-
-#projects {
+#aboutContent {
   min-height: 50%;
   width: 100%;
   background-color: $body-background;
@@ -37,19 +44,5 @@
     font-weight: $global-weight-bold;
     color: $dark-gray;
     text-decoration: underline;
-  }
-}
-
-#contact {
-  height: 100%;
-  background-color: $body-font-color;
-  color: $body-background;
-  min-height: 500px;
-  .filter {
-    position: absolute;
-    background-image: url('../img/marble.jpg');
-    height: 100%;
-    width: 100%;
-    z-index: 1;
   }
 }
