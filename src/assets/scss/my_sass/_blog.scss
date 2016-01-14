@@ -1,0 +1,13 @@
+#blog {
+  width: $breakpoints.small
+  // width: 100%;
+  background-color: $body-background;
+  color: $body-font-color;
+  padding: 2em;
+  .blogHead {
+    height: 30vh;
+  }
+  .date {
+
+  }
+}

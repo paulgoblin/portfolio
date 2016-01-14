@@ -49,9 +49,10 @@ $hero-font-color: $body-background;
 $projects-font-color: $body-font-color;
 $projects-background: $body-background;
 
-@import "footer";
-@import "header";
+@import "my_sass/footer";
+@import "my_sass/header";
 @import "my_sass/home";
+@import "my_sass/blog";
 
 .button {
   border-radius: 4px;

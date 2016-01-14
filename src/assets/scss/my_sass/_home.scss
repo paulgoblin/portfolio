@@ -39,6 +39,9 @@
 
 #contact {
   height: 100%;
+  background-color: $body-font-color;
+  color: $body-background;
+  min-height: 500px;
   .filter {
     position: absolute;
     background-image: url('../img/marble.jpg');
@@ -46,7 +49,4 @@
     width: 100%;
     z-index: 1;
   }
-  background-color: $body-font-color;
-  color: $body-background;
-  min-height: 500px;
 }
