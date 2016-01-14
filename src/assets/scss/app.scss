@@ -59,7 +59,6 @@ $projects-background: $body-background;
   border-radius: 4px;
 }
 
-
 .background {
   position: fixed;
   width: 100%;
@@ -75,5 +74,5 @@ $projects-background: $body-background;
 
 .backgroundFilter {
   background-color: $body-background;
-  z-index: -9998;
+  z-index: 1;
 }

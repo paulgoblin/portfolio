@@ -2,9 +2,12 @@
 #hero {
   height: 90%;
   width: 100%;
-
+  background: $primary-color;
   * {
     color: $hero-font-color;
+  }
+  .CTA {
+    padding: 0 1em;
   }
 }
 

@@ -3,7 +3,13 @@
     <div class="small-10 columns small-centered text-center">
       <h1 class='blogTitle'>Paul Richter's Blog</h1>
       <h5 class='blogSubtitle'>Thoughts, perspectives, and knowledges</h5>
-      {{> socialLinkBar}}
+      <div class="socialLinkBar">
+        {{#each socialLinks}}
+          <a class="iconLink" href="{{url}}">
+            <img class="octicon-large" src="../{{svg}}"/>
+          </a>
+        {{/each}}
+      </div>
     </div>
   </div>
   <div class="row blogListItem align-center">
@@ -16,4 +22,5 @@
       </div>
       <div class="column small-12"></div>
     {{/each}}
+  </div>
 </div>

@@ -5,14 +5,24 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{pageInfo.title}}</title>
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
   <body id='page'>
-    <div class="background backgroundImg"></div>
+
     <div class="fade background backgroundFilter"></div>
     {{> header}}
     {{> body}}
     {{> footer}}
-    <script src="assets/js/app.js"></script>
+    <script src="{{root}}assets/js/app.js"></script>
   </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-72417540-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
 </html>
