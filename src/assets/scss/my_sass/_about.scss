@@ -1,12 +1,11 @@
 #about {
-  width: 100%;
   background-color: $primary-color;
-  padding: 3em 0 3em;
+  padding: 3em 0 0;
   * {
     color: $body-background;
   }
   .aboutHead {
-    padding: 2em;
+    padding: 2em 0;
     .aboutTitle {
       margin-bottom: 0;
     }
@@ -21,13 +20,22 @@
       }
     }
   }
+  .roundFace {
+    height: 10em;
+    border-radius: 9999px;
+    border: 10px solid $body-background;
+  }
+  .centerPill {
+    width: 10em;
+    height: 5em;
+    margin: auto;
+  }
 }
 #aboutContent {
   min-height: 50%;
-  width: 100%;
   background-color: $body-background;
   color: $body-font-color;
-  padding: 2em;
+  padding: 7em 0 2em;
   .screenShot img{
     width: 100%;
   }
