@@ -1,13 +1,30 @@
 #blog {
-  width: $breakpoints.small
-  // width: 100%;
+  width: 100%;
+  min-height: 100%;
   background-color: $body-background;
   color: $body-font-color;
   padding: 2em;
   .blogHead {
     height: 30vh;
+    .blogTitle {
+      margin-bottom: 0;
+    }
+    .blogSubtitle {
+    }
+    .socialLinkContainer {
+      padding: 1em;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+  .article {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $light-gray;
   }
   .date {
-
+    color: $dark-gray;
+  }
+  .iconLink{
+    margin: 0 .5em;
   }
 }

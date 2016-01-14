@@ -1,0 +1,18 @@
+{
+  "git": {
+    "url":"https://github.com/paulgoblin/",
+    "svg":"assets/img/svg/mark-github.svg"
+  },
+  "twitter": {
+    "url":"https://twitter.com/paulgoblin",
+    "svg":"assets/img/svg/twitter.svg"
+  },
+  "linkedin": {
+    "url":"https://www.linkedin.com/in/paul-richter-788a49107",
+    "svg":"assets/img/svg/linkedin.svg"
+  },
+  "mail": {
+    "url":"mailto:mpr75@cornell.edu",
+    "svg":"assets/img/svg/mail.svg"
+  }
+}
