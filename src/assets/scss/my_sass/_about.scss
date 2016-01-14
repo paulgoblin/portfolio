@@ -35,7 +35,17 @@
   min-height: 50%;
   background-color: $body-background;
   color: $body-font-color;
-  padding: 7em 0 2em;
+  padding: 8em 0 2em;
+  .bio {
+    font-size: 18px;
+    a {
+      color: $primary-color;
+      border-bottom: 1px solid $light-gray;
+      &:hover {
+        color: darken($primary-color, 20%)
+      }
+    }
+  }
   .screenShot img{
     width: 100%;
   }
@@ -46,11 +56,5 @@
         order:1;
       }
     }
-  }
-  .repoLink {
-    float: right;
-    font-weight: $global-weight-bold;
-    color: $dark-gray;
-    text-decoration: underline;
   }
 }
