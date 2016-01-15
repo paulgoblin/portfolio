@@ -48,6 +48,7 @@
 $hero-font-color: $body-background;
 $projects-font-color: $body-font-color;
 $projects-background: $body-background;
+$form-border-radius: 4px;
 
 @import "my_sass/octicons";
 @import "my_sass/footer";
@@ -55,11 +56,11 @@ $projects-background: $body-background;
 @import "my_sass/home";
 @import "my_sass/blog";
 @import "my_sass/about";
+@import "my_sass/form";
 
 .button {
-  border-radius: 4px;
+  border-radius: $form-border-radius;
 }
-
 .background {
   position: fixed;
   width: 100%;

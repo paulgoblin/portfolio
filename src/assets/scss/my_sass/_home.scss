@@ -41,15 +41,22 @@
 }
 
 #contact {
-  height: 100%;
-  background-color: $body-font-color;
-  color: $body-background;
+  background-color: $body-background;
+  color: $body-font-color;
   min-height: 500px;
+  // background-image: url('../img/marble.jpg');
+  .break{
+    background-color: $primary-color;
+    width: 100%;
+    min-height: 10em;
+  }
+  .formRow {
+    padding: 4em 0;
+  }
   .filter {
+    // background: $primary-color;
     position: absolute;
-    background-image: url('../img/marble.jpg');
     height: 100%;
     width: 100%;
-    z-index: 1;
   }
 }

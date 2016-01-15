@@ -39,6 +39,17 @@
 </div>
 
 <div id="contact">
-  <div class="filter"></div>
-
+  <div class="break"></div>
+  <div class="row align-center formRow">
+    <div class="column small-10 medium-8 large-6 text-center">
+      <h2>Contact Me</h2>
+      <div class="socialLinkBar">
+        {{#each socialLinks}}
+          <a class="iconLink" href="{{root}}{{url}}">
+            <img class="octicon-large" src="{{root}}{{svg}}"/>
+          </a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
 </div>
