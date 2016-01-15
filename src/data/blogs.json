@@ -4,7 +4,7 @@
     "title":"Dealing with $http responses in an AngularJS Service",
     "sub":"Or, how I learned to quit worrying and Love the Bomb.",
     "date":"Jan 14, 2016",
-    "tags":["AngularJS", "AJAX"]
+    "tags":["AngularJS", "$http", "Promises"]
   },
   "two":{
     "uri":"how-do-do-awesome-things-in-nodejs.html",

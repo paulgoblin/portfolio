@@ -7,6 +7,10 @@
     "url":"https://twitter.com/paulgoblin",
     "svg":"assets/img/svg/twitter.svg"
   },
+  "stackoverflow": {
+    "url":"http://stackoverflow.com/users/5307288/paulgoblin",
+    "svg":"assets/img/svg/stackoverflow.svg"
+  },
   "linkedin": {
     "url":"https://www.linkedin.com/in/paul-richter-788a49107",
     "svg":"assets/img/svg/linkedin.svg"
