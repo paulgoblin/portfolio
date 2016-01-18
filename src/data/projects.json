@@ -12,6 +12,5 @@
     "description":"The classic Tower of Hanoi game. Written using jQuery.",
     "repoLink":"https://github.com/paulgoblin/diskOfHanoi",
     "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
-  },
-
+  }
 }
