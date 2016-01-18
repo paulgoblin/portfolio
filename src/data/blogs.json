@@ -5,12 +5,5 @@
     "sub":"Or, how I learned to quit worrying and Love the Bomb.",
     "date":"Jan 14, 2016",
     "tags":["AngularJS", "$http", "Promises"]
-  },
-  "two":{
-    "uri":"how-do-do-awesome-things-in-nodejs.html",
-    "title":"How to do Awesome Things in Node.js",
-    "sub":"Or, how I learned to quit worrying and Love the Bomb.",
-    "date":"Jan 13, 2016",
-    "tags":["node.js", "node","cool shit","paul is the bomb"]
   }
 }

@@ -1,34 +1,17 @@
 {
   "1":
   {
-    "title": "Tower of Hanoi",
-    "description":"With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.",
-    "imageUrl":"assets/img/projects/towerofhanoi.png",
+    "title": "SWAPI Planetary Navigator",
+    "description":"A navigator to the SWAPI api. Written using angular.",
     "deployLink":"http://paulgoblin.github.io/diskOfHanoi",
     "repoLink":"https://github.com/paulgoblin/diskOfHanoi"
   },
   "2":
   {
     "title": "Tower of Hanoi",
-    "description":"With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.",
-    "imageUrl":"assets/img/projects/towerofhanoi.png",
+    "description":"The classic Tower of Hanoi game. Written using jQuery.",
     "repoLink":"https://github.com/paulgoblin/diskOfHanoi",
     "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
   },
-  "3":
-  {
-    "title": "Tower of Hanoi",
-    "description":"With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.",
-    "imageUrl":"assets/img/projects/towerofhanoi.png",
-    "repoLink":"https://github.com/paulgoblin/diskOfHanoi",
-    "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
-  },
-  "4":
-  {
-    "title": "Tower of Hanoi",
-    "description":"With the plastic eyeballs, spray-paint the vegetables. Dog food stalls with the beefcake pantyhose. Kill the headlights and put it in neutral. Stock car flaming' with a loser And the cruise control. Baby's in Reno with the vitamin D. Got a couple of couches, sleep on the love seat.",
-    "imageUrl":"assets/img/projects/towerofhanoi.png",
-    "repoLink":"https://github.com/paulgoblin/diskOfHanoi",
-    "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
-  }
+
 }
