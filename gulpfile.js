@@ -5,7 +5,42 @@ var gulp     = require('gulp');
 var panini   = require('panini');
 var rimraf   = require('rimraf');
 var sequence = require('run-sequence');
-var sherpa   = require('style-sherpa');
+
+var markdown  = require('gulp-markdown');
+markdown.marked.setOptions({
+  renderer: new markdown.marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
+});
+
+// turn md files into html partials
+gulp.task('blogPosts', function () {
+  return gulp.src('src/blog/blogOne.md')
+    .pipe(markdown())
+    .pipe(gulp.dest('src/partials/'));
+});
+
+// var markdownDocs = require('gulp-markdown-docs');
+//
+// gulp.task('blogPosts', function () {
+//   return gulp.src('src/blog/blogOne.md')
+//     .pipe(markdownDocs('src/partials/blogOne.html', {
+//       highlightTheme: 'solarized_dark',
+//       layoutStylesheetUrl: false,
+//       templatePath: "",
+//       markdown: {
+//         highlight: function (code) {
+//           return highlight.highlightAuto(code).value;
+//         }
+//       }
+//     }))
+//     .pipe(gulp.dest(''));
+// });
 
 // Check for --production flag
 var isProduction = !!(argv.production);

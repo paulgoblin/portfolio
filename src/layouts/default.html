@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{pageInfo.title}}</title>
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+
+    <!-- highlight JS -->
+    <link rel="stylesheet" href="{{root}}assets/css/github.css">
+    <script src="assets/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
   </head>
   <body id='page'>
     {{#ifpage 'index'}}

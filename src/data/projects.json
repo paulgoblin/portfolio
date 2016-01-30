@@ -1,16 +1,26 @@
 {
   "1":
   {
-    "title": "SWAPI Planetary Navigator",
-    "description":"A navigator to the SWAPI api. Written using angular.",
-    "deployLink":"http://paulgoblin.github.io/diskOfHanoi",
-    "repoLink":"https://github.com/paulgoblin/diskOfHanoi"
+    "title": "Green It Forums",
+    "description":"A Reddit-based forum app that allows users to post content, comment, and vote. Viewed links turn green! The frontend is written with React, and the backend uses Node.js/Express, and MongoDB",
+    "repoLink":"https://github.com/paulgoblin/greenit-frontend",
+    "deployLink":"http://paulgoblin.github.io/greenit-frontend",
+    "imageUrl":"assets/img/projects/greenit.png"
   },
   "2":
   {
+    "title": "SWAPI Planetary Navigator",
+    "description":"A navigator to the SWAPI api. Written using angular.",
+    "deployLink":"http://paulgoblin.github.io/swapiNavigator",
+    "repoLink":"https://github.com/paulgoblin/swapiNavigator",
+    "imageUrl":"assets/img/projects/swapi.png"
+  },
+  "3":
+  {
     "title": "Tower of Hanoi",
     "description":"The classic Tower of Hanoi game. Written using jQuery.",
-    "repoLink":"https://github.com/paulgoblin/diskOfHanoi",
-    "deployLink":"http://paulgoblin.github.io/diskOfHanoi"
+    "repoLink":"https://github.com/paulgoblin/towerOfHanoi",
+    "deployLink":"http://paulgoblin.github.io/towerOfHanoi",
+    "imageUrl":"assets/img/projects/towerofhanoi.png"
   }
 }
