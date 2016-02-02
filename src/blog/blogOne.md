@@ -12,24 +12,25 @@ Let's say when a button is clicked, our controller needs to update the view with
 
 The $http function returns a promise, which has a .then() method which will be called in the controller when a response comes back from our API. Like so:
 
+```javascript
+app.controller('DisplayController', ['$scope', 'ClogsService', function($scope, ClogsService){
+  $scope.clogs = [];
+  $scope.getClogs = function() {
+    ClogService.getClogs()
+      .then(function(response){
+        ClogsService.clogs = response.data;
+          $scope.clogs = ClogsService.clogs;
+      });
+    };
+})
 
-    app.controller('DisplayController', ['$scope', 'ClogsService', function($scope, ClogsService){
-      $scope.clogs = [];
-      $scope.getClogs = function() {
-        ClogService.getClogs()
-          .then(function(response){
-            ClogsService.clogs = response.data;
-              $scope.clogs = ClogsService.clogs;
-          });
-        };
-    })
-
-    app.service('ClogsService', ['$http', function($http){
-        this.clogs = [];
-        this.getClogs = function(){
-            return $http.get('/API/clogs');
-        };
-    }]);
+app.service('ClogsService', ['$http', function($http){
+  this.clogs = [];
+  this.getClogs = function(){
+    return $http.get('/API/clogs');
+  };
+}]);
+```
 
 
 Good enough. Our service makes the $http request, and our controller is able to update both $scope and the ClogsService. But there are some issues with this method. Ideally, all the data management would happen in the service, not the controller. We want to keep our controller skinny!
@@ -40,18 +41,18 @@ In this approach, we put response handling in the service and ask the controller
 
 ```JavaScript
 app.controller('DisplayController', ['$scope', 'ClogsService', function($scope, ClogsService){
-    $scope.clogs = [];
-    $scope.clogWatcher = function(){ return ClogsService.clogs };
-    $scope.$watch('clogWatcher', function(newClogs){ $scope.clogs = newClogs }, true);
+  $scope.clogs = [];
+  $scope.clogWatcher = function(){ return ClogsService.clogs };
+  $scope.$watch('clogWatcher', function(newClogs){ $scope.clogs = newClogs }, true);
 })
 app.service('ClogsService', ['$http', function($http){
-    this.clogs = [];
-    this.getClogs = () => {
-        $http.get('/API/clogs')
-            .then((response) => {
-                this.clogs = response.data;
-            });
-    };
+  this.clogs = [];
+  this.getClogs = () => {
+    $http.get('/API/clogs')
+      .then((response) => {
+        this.clogs = response.data;
+      });
+  };
 }]);
 ```
 

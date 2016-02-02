@@ -1,3 +1,5 @@
+'use strict';
+
 var $        = require('gulp-load-plugins')();
 var argv     = require('yargs').argv;
 var browser  = require('browser-sync');
@@ -5,6 +7,7 @@ var gulp     = require('gulp');
 var panini   = require('panini');
 var rimraf   = require('rimraf');
 var sequence = require('run-sequence');
+var fs       = require('fs');
 
 var markdown  = require('gulp-markdown');
 markdown.marked.setOptions({
@@ -20,27 +23,21 @@ markdown.marked.setOptions({
 
 // turn md files into html partials
 gulp.task('blogPosts', function () {
-  return gulp.src('src/blog/blogOne.md')
+  return gulp.src('./src/blog/blogOne.md')
     .pipe(markdown())
-    .pipe(gulp.dest('src/partials/'));
+    .pipe(gulp.dest('./src/partials/'));
 });
 
-// var markdownDocs = require('gulp-markdown-docs');
-//
-// gulp.task('blogPosts', function () {
-//   return gulp.src('src/blog/blogOne.md')
-//     .pipe(markdownDocs('src/partials/blogOne.html', {
-//       highlightTheme: 'solarized_dark',
-//       layoutStylesheetUrl: false,
-//       templatePath: "",
-//       markdown: {
-//         highlight: function (code) {
-//           return highlight.highlightAuto(code).value;
-//         }
-//       }
-//     }))
-//     .pipe(gulp.dest(''));
-// });
+// correct rendered MD once it has been injected into the template
+gulp.task('postProcess', function () {
+  console.log("postProcess-ing");
+  let blogPost = fs.readFileSync("dist/blog/dealing-with-http-responses-in-an-angularjs-service.html",'utf8');
+  let fixedBlogPost = blogPost.replace(/(\n.*)<pre>[^]*?<\/pre>/gm, (matchedBlock, p1) => {
+    return matchedBlock.replace(new RegExp(p1, 'g'),'\n');
+  });
+  fs.writeFile("dist/blog/dealing-with-http-responses-in-an-angularjs-service.html", fixedBlogPost)
+});
+
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -192,14 +189,24 @@ gulp.task('build', function(done) {
 });
 
 // Start a server with LiveReload to preview the site in
-gulp.task('server', ['build'], function() {
+gulp.task('server', ['build', 'postProcess'], function() {
   browser.init({
     server: 'dist', port: PORT, notify: false
   });
 });
 
+function postProcess() {
+  console.log("postProcess-ing");
+  let blogPost = fs.readFileSync("dist/blog/dealing-with-http-responses-in-an-angularjs-service.html",'utf8');
+  let fixedBlogPost = blogPost.replace(/(\n.*)<pre>[^]*?<\/pre>/gm, (matchedBlock, p1) => {
+    return matchedBlock.replace(new RegExp(p1, 'g'),'\n');
+  });
+  fs.writeFile("dist/blog/dealing-with-http-responses-in-an-angularjs-service.html", fixedBlogPost)
+}
+
 // Build the site, run the server, and watch for file changes
-gulp.task('default', ['build', 'server'], function() {
+gulp.task('default', ['blogPosts','build', 'server'], function() {
+  postProcess();
   gulp.watch(PATHS.assets, ['copy', 'reload']);
   gulp.watch(['src/pages/**/*.html'], ['pages', 'reload']);
   gulp.watch(['src/{layouts,partials}/**/*.html'], ['pages:reset', 'reload']);

@@ -39,8 +39,6 @@
   },
   "private": true,
   "dependencies": {
-    "github-markdown-css": "^2.2.0",
-    "gulp-markdown": "^1.2.0",
-    "gulp-markdown-docs": "^0.1.5"
+    "gulp-markdown": "^1.2.0"
   }
 }
