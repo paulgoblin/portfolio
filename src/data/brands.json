@@ -1,0 +1,32 @@
+{
+  "html-css-js": {
+    "url":"assets/img/brands/html-css-js.png"
+  },
+  "angular": {
+    "url":"assets/img/brands/angular.png"
+  },
+  "react": {
+    "url":"assets/img/brands/react.png"
+  },
+  "node": {
+    "url":"assets/img/brands/node.png"
+  },
+  "mongo": {
+    "url":"assets/img/brands/mongo.png"
+  },
+  "express": {
+    "url":"assets/img/brands/express.png"
+  },
+  "jquery": {
+    "url":"assets/img/brands/jquery.png"
+  },
+  "mongoose": {
+    "url":"assets/img/brands/mongoose.png"
+  },
+  "socket-ionic": {
+    "url":"assets/img/brands/socket-ionic.png"
+  },
+  "foundation": {
+    "url":"assets/img/brands/foundations-famous-ember.png"
+  }
+}

@@ -1,19 +1,19 @@
 {
   "1":
   {
-    "title": "Green It Forums",
-    "description":"A Reddit-based forum app that allows users to post content, comment, and vote. Viewed links turn green! The frontend is written with React, and the backend uses Node.js/Express, and MongoDB",
-    "repoLink":"https://github.com/paulgoblin/greenit-frontend",
-    "deployLink":"http://paulgoblin.github.io/greenit-frontend",
-    "imageUrl":"assets/img/projects/greenit.png"
+    "title": "StartCoding.org",
+    "description":"A place to discover and share coding resources. Built with React and MongoDB. We ditched the flux pattern in favor of a lighter custom-built store/event emitter. DIY react router. Recursive comment components. Lots of fun!",
+    "repoLink":"https://github.com/robertsonsamuel/startcoding-backend",
+    "deployLink":"http://startcoding.org/",
+    "imageUrl":"assets/img/projects/startcodingsplash.png"
   },
   "2":
   {
-    "title": "SWAPI Planetary Navigator",
-    "description":"A navigator to the SWAPI api. Written using angular.",
-    "deployLink":"http://paulgoblin.github.io/swapiNavigator",
-    "repoLink":"https://github.com/paulgoblin/swapiNavigator",
-    "imageUrl":"assets/img/projects/swapi.png"
+    "title": "Green It Forums",
+    "description":"A Reddit-inspired forum app that allows users to post content, comment, and vote. Viewed links turn green! The frontend is written with React, and the backend uses Node.js/Express, and MongoDB",
+    "repoLink":"https://github.com/paulgoblin/greenit-frontend",
+    "deployLink":"http://paulgoblin.github.io/greenit-frontend",
+    "imageUrl":"assets/img/projects/greenit.png"
   },
   "3":
   {

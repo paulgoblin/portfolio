@@ -40,16 +40,22 @@
   }
 }
 
+#brands {
+  background-color: $primary-color;
+  width: 100%;
+  min-height: 10em;
+  .brandsRow {
+    padding: 3em 3em;
+  }
+  .brandContainer {
+    padding: 2em;
+  }
+}
+
 #contact {
   background-color: $body-background;
   color: $body-font-color;
-  min-height: 500px;
   // background-image: url('../img/marble.jpg');
-  .break{
-    background-color: $primary-color;
-    width: 100%;
-    min-height: 10em;
-  }
   .formRow {
     padding: 4em 0;
   }

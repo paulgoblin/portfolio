@@ -1,9 +1,9 @@
 {
   "one":{
     "uri":"dealing-with-http-responses-in-an-angularjs-service.html",
-    "title":"Dealing with $http responses in an AngularJS Service",
+    "title":"Handling $http responses in an AngularJS Service",
     "sub":"Or, how I learned to quit worrying and Love the Bomb.",
-    "date":"Jan 14, 2016",
+    "date":"Jan 28, 2016",
     "tags":["AngularJS", "$http", "Promises"]
   }
 }

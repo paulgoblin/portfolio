@@ -28,17 +28,6 @@ gulp.task('blogPosts', function () {
     .pipe(gulp.dest('./src/partials/'));
 });
 
-// correct rendered MD once it has been injected into the template
-gulp.task('postProcess', function () {
-  console.log("postProcess-ing");
-  let blogPost = fs.readFileSync("dist/blog/dealing-with-http-responses-in-an-angularjs-service.html",'utf8');
-  let fixedBlogPost = blogPost.replace(/(\n.*)<pre>[^]*?<\/pre>/gm, (matchedBlock, p1) => {
-    return matchedBlock.replace(new RegExp(p1, 'g'),'\n');
-  });
-  fs.writeFile("dist/blog/dealing-with-http-responses-in-an-angularjs-service.html", fixedBlogPost)
-});
-
-
 // Check for --production flag
 var isProduction = !!(argv.production);
 
@@ -189,7 +178,7 @@ gulp.task('build', function(done) {
 });
 
 // Start a server with LiveReload to preview the site in
-gulp.task('server', ['build', 'postProcess'], function() {
+gulp.task('server', ['build'], function() {
   browser.init({
     server: 'dist', port: PORT, notify: false
   });
@@ -201,7 +190,7 @@ function postProcess() {
   let fixedBlogPost = blogPost.replace(/(\n.*)<pre>[^]*?<\/pre>/gm, (matchedBlock, p1) => {
     return matchedBlock.replace(new RegExp(p1, 'g'),'\n');
   });
-  fs.writeFile("dist/blog/dealing-with-http-responses-in-an-angularjs-service.html", fixedBlogPost)
+  fs.writeFileSync("dist/blog/dealing-with-http-responses-in-an-angularjs-service.html", fixedBlogPost)
 }
 
 // Build the site, run the server, and watch for file changes

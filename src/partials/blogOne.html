@@ -1,48 +1,91 @@
 <h1 id="-blogs-one-title-">{{blogs.one.title}}</h1>
-<p>We almost always use $http inside a service, because services are where we deal with stuff that can be shared throughout the app (like data from an API). But usually when we get a response back, a controller needs to know about it. So how do we get this asynchronous response back to the controller?</p>
+<p>We almost always use $http inside a service, because services are where we deal with stuff that can be shared throughout the app (like data from an API). But usually when we get a response, a controller needs to know about it. So how do we get this asynchronous response back to the controller?</p>
+<p>In this article, I&#39;ll go over a few patterns for handling $http responses using some of Angular&#39;s built in functionality.</p>
 <h4 id="the-problem">The Problem</h4>
-<p>Let&#39;s say when a button is clicked, our controller needs to update the view with fresh information from our clogs API, and our ClogsService needs to store this new information so other controllers can use it.</p>
+<p>Let&#39;s say we&#39;re building an app about clogs. When a button is clicked, we want to make $http request to our API and update our view with the new clog information.</p>
 <h4 id="the-typical-method-then-">The typical method - .then()</h4>
 <p>The $http function returns a promise, which has a .then() method which will be called in the controller when a response comes back from our API. Like so:</p>
-<pre><code class="lang-javascript">app.controller(&#39;DisplayController&#39;, [&#39;$scope&#39;, &#39;ClogsService&#39;, function($scope, ClogsService){
+<pre><code class="lang-JavaScript">app.controller(&#39;DisplayController&#39;, function($scope, ClogsService){
   $scope.clogs = [];
-  $scope.getClogs = function() {
-    ClogService.getClogs()
-      .then(function(response){
+  $scope.getClogs = () =&gt; {
+    ClogsService.getClogs()
+      .then( (response) =&gt; {
         ClogsService.clogs = response.data;
-          $scope.clogs = ClogsService.clogs;
+        $scope.clogs = ClogsService.clogs;
       });
-    };
+  };
 })
 
-app.service(&#39;ClogsService&#39;, [&#39;$http&#39;, function($http){
+app.service(&#39;ClogsService&#39;, function($http){
   this.clogs = [];
-  this.getClogs = function(){
-    return $http.get(&#39;/API/clogs&#39;);
-  };
-}]);
+  this.getClogs = () =&gt; $http.get(`${API}/clogs`);
+});
 </code></pre>
-<p>Good enough. Our service makes the $http request, and our controller is able to update both $scope and the ClogsService. But there are some issues with this method. Ideally, all the data management would happen in the service, not the controller. We want to keep our controller skinny!</p>
-<h4 id="a-better-way-watch">A better way - $watch</h4>
-<p>In this approach, we put response handling in the service and ask the controller to watch the service for changes so it knows when to update the scope. Angular already has a way to watch scoped variables for change: $scope.$watch. But we want to watch the <em>service</em>. So what do we do? How about this:</p>
-<pre><code class="lang-JavaScript">app.controller(&#39;DisplayController&#39;, [&#39;$scope&#39;, &#39;ClogsService&#39;, function($scope, ClogsService){
+<p>Good enough. Our service makes the $http request, and our controller is able to both update $scope and store the information the ClogsService for access throughout the app. But there are some issues with this method. Ideally, all the data management would happen in the service, not the controller. We want to keep our controller skinny!</p>
+<h4 id="a-slightly-better-way-watch">A (slightly) better way - $watch</h4>
+<p>In this approach, we put response handling in the service. The controller will $watch a function that returns Clogservice.clogs. This will be checked during the digest cycle, and when the result changes the controller will update the scope.</p>
+<pre><code class="lang-JavaScript">app.controller(&#39;DisplayController&#39;, function($scope, ClogsService){
+  var clogsWatcher = () =&gt; ClogsService.clogs
   $scope.clogs = [];
-  $scope.clogWatcher = function(){ return ClogsService.clogs };
-  $scope.$watch(&#39;clogWatcher&#39;, function(newClogs){ $scope.clogs = newClogs }, true);
+  $scope.$watch( clogsWatcher, (newClogs) =&gt; $scope.clogs = newClogs, true);
+  $scope.getClogs = ClogsService.getClogs;
 })
-app.service(&#39;ClogsService&#39;, [&#39;$http&#39;, function($http){
+
+app.service(&#39;ClogsService&#39;, function($http){
   this.clogs = [];
   this.getClogs = () =&gt; {
-    $http.get(&#39;/API/clogs&#39;)
+    $http.get(`${API}/clogs`)
       .then((response) =&gt; {
         this.clogs = response.data;
       });
   };
-}]);
+});
 </code></pre>
-<p>This is an improvement. We put a function on the scope that returns the service property we want to watch: clogs. Now we can $watch this function for changes, and update $scope.clogs when it does. In this way, we avoid putting the whole ClogsService on the scope in order to watch it. Remember, putting things on the scope is costly, because it gets checked during Angular&#39;s digest cycle.</p>
-<p>There is the added benefit that <em>any</em> controller can watch the service and update it&#39;s scope on a change.</p>
-<p>But this method is not perfect. Putting the clogWatcher function on the scope is kinda awkward, especially if we&#39;re not using it explicitly in the view.</p>
+<p>This is an improvement. Our controller has a more declarative style - we just ask for clogs, and the service takes care of the details. There is the added benefit that <em>any</em> controller can watch the service and update it&#39;s scope on a change.</p>
+<p>But this method has a problem. The function we&#39;re watching, <code>clogsWatcher</code>, gets checked during every digest cycle. This happens A LOT! By watching it, we&#39;re effectively putting ClogService.clogs on the scope. Too many things on the scope kills performance in Angular, so we&#39;d like to avoid this.</p>
 <p>PS: The last argument in $watch, &quot;true,&quot; tells watch to check whatever it is watching for equivalence, not just reference</p>
 <h4 id="getting-fancy-event-emitters">Getting fancy - Event Emitters</h4>
-<p>Coming soon ...</p>
+<p>Good news! Angular $scope has methods for a &quot;publish/subscribe&quot; pattern, i.e. event emitters. This can make our task much easier. When the service gets new clog data from our API, we broadcast a &quot;got-clogs&quot; event. The controller is listening for that event, and updates the scope when it hears it.</p>
+<pre><code class="lang-JavaScript">app.controller(&#39;DisplayController&#39;, function($scope, ClogsService){
+  $scope.clogs = [];
+  $scope.getClogs = ClogsService.getClogs;
+  $scope.$on(&#39;got-clogs&#39;, () =&gt; $scope.clogs = ClogsService.clogs);
+})
+
+app.service(&#39;ClogsService&#39;, function($http, $rootScope){
+  this.clogs = [];
+  this.getClogs = () =&gt; {
+    $http.get(`${API}/clogs`)
+      .then((response) =&gt; {
+        this.clogs = response.data;
+        $rootScope.$broadcast(&#39;got-clogs&#39;)
+      });
+  };
+});
+</code></pre>
+<p>This seems to solve all of our problems. Our controller is nice and simple, there are no unnecessary items on the scope, and any other controller can listen to this event to respond to new clogs!</p>
+<p>However, there are pitfalls that are easy to encounter with this method. It has to do with how event emitters work. Let&#39;s look at a simplified event emitting system:</p>
+<pre><code class="lang-JavaScript">app.controller(&#39;DisplayController&#39;, function($scope, EventEmitter){
+  EventEmitter.registerListener(&#39;something-happened&#39;, () =&gt; {
+    // ...things to do when something happens. Dance?
+  });
+})
+
+app.service(&#39;EventEmitter&#39;, function($http){
+  this.events = {};
+  this.registerListener = (eventName, callback) =&gt; {
+    if ( !this.events[eventName] ) this.events[eventName] = [];
+    this.events[eventName].push(callback)
+  };
+  this.emit = (eventName) =&gt; {
+    if ( !this.events[eventName] ) return;
+    this.events[eventName].forEach( callback =&gt; callback() );
+  };
+});
+</code></pre>
+<p>Nothing magical here. When you &quot;listen&quot; to an event you&#39;re just adding a function to an array of functions that are executed when the event is &quot;emitted.&quot; With our clogs example, we&#39;re adding a function that updates the scope to a list of functions that are called when the &quot;got-clogs&quot; event is triggered.</p>
+<p>If you&#39;re building an app where you have directives or controllers that are dynamically created and destroyed, listening functions that reference their scope are still in the array of callbacks and are still called on every event! Things gets messy real fast. If you&#39;re building a large app, your components must &quot;stop listening&quot; before they are destroyed. Aviv Ben-Yosef describes an excellent pattern for registering and unregistering listeners in <a href="http://www.codelord.net/2015/05/04/angularjs-notifying-about-changes-from-services-to-controllers/">this article</a>. I would definitely recommend it if you&#39;re going with a publish/subscribe pattern.</p>
+<h4 id="wrapping-up">Wrapping up</h4>
+<p>So far we&#39;ve explored a few ways of handling $http responses in a service using Angular&#39;s built in functionality. It&#39;s worth noting that Angular as a promises library, $q (which $http is based off of), that can also be used to manage these $http responses. But I&#39;ll have to save that for another day.</p>
+<p>Know any other ways you like to handle this task? I&#39;d love to hear about it! Shoot me an <a href="mailto:mpr75@cornell.edu">email</a>!</p>
+<p><em>Want to check out and play with the code samples used in this article? Everything&#39;s posted on <a href="https://github.com/paulgoblin/handling-http">GitHub</a>, so check it out!</em></p>

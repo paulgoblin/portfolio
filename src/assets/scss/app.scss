@@ -57,6 +57,13 @@ $form-border-radius: 4px;
 @import "my_sass/blog";
 @import "my_sass/about";
 @import "my_sass/form";
+@import "my_sass/markdown";
+@import "my_sass/highlight";
+
+
+.markdown-body .highlight pre, .markdown-body pre {
+  background-color: #2d2d2d;
+}
 
 .button {
   border-radius: $form-border-radius;
