@@ -1,5 +1,5 @@
+$divider: 1px solid $light-gray;
 #blog {
-  $divider: 1px solid $light-gray;
   width: 100%;
   min-height: 100%;
   background-color: $body-background;
@@ -17,21 +17,22 @@
       // border-bottom: 2px solid $primary-color;
     }
   }
-  .article {
-    margin-top: 1em;
-    padding-bottom: 1em;
-    border-bottom: 1px solid $light-gray;
-    &:first-child{
-      padding-top: 1em;
-      border-top: $divider;
-    }
-  }
   .date {
     color: $dark-gray;
   }
   .contentWrapper {
     margin: 1em 0;
     padding: 4em 0;
+    border-top: $divider;
+  }
+}
+
+.article {
+  margin-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $light-gray;
+  &:first-of-type{
+    padding-top: 1em;
     border-top: $divider;
   }
 }

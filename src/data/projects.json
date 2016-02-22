@@ -1,21 +1,29 @@
 {
   "1":
   {
+    "title": "Wiki Guide",
+    "description":"Discover the best Wikipedia near you. Uses a rating system to show the most interesting articles in your proximity. You can like or strike on a given article, browse wikipedia, and view all your favorites. Great for travel. A MEAN stack app.",
+    "repoLink":"https://github.com/paulgoblin/wiki-guide-frontend",
+    "deployLink":"https://paulgoblin.github.io/wiki-guide-frontend",
+    "imageUrl":"assets/img/projects/missionSS.png"
+  },
+  "2":
+  {
     "title": "StartCoding.org",
     "description":"A place to discover and share coding resources. Built with React and MongoDB. We ditched the flux pattern in favor of a lighter custom-built store/event emitter. DIY react router. Recursive comment components. Lots of fun!",
     "repoLink":"https://github.com/robertsonsamuel/startcoding-backend",
     "deployLink":"http://startcoding.org/",
-    "imageUrl":"assets/img/projects/startcodingsplash.png"
+    "imageUrl":"assets/img/projects/startCodingMac.png"
   },
-  "2":
+  "3":
   {
     "title": "Green It Forums",
     "description":"A Reddit-inspired forum app that allows users to post content, comment, and vote. Viewed links turn green! The frontend is written with React, and the backend uses Node.js/Express, and MongoDB",
     "repoLink":"https://github.com/paulgoblin/greenit-frontend",
     "deployLink":"http://paulgoblin.github.io/greenit-frontend",
-    "imageUrl":"assets/img/projects/greenit.png"
+    "imageUrl":"assets/img/projects/greenitMac.png"
   },
-  "3":
+  "4":
   {
     "title": "Tower of Hanoi",
     "description":"The classic Tower of Hanoi game. Written using jQuery.",

@@ -40,6 +40,9 @@
 
 <div id="brands">
   <div class="row align-center brandsRow">
+    <div class="column small-12 align-center">
+      <h2 class= "brandsTitle">technologies</h2>
+    </div>
     {{#each brands}}
       <div class="brandContainer column small-12 medium-4 large-3">
         <img src="{{root}}{{url}}" alt="">
@@ -49,15 +52,26 @@
 </div>
 
 <div id="contact">
-  <div class="row align-center formRow">
-    <div class="column small-10 medium-8 large-6 text-center">
-      <h2>Contact Me</h2>
+  <div class="row align-center contactRow">
+    <div class="contactCol column small-10 large-5 text-center">
+      <h2 class="contactsTitle">Contact Me</h2>
       <div class="socialLinkBar">
         {{#each socialLinks}}
-          <a class="iconLink" href="{{root}}{{url}}">
+          <a class="iconLink" href="{{root}}{{url}}" target="_blank">
             <img class="octicon-large" src="{{root}}{{svg}}"/>
           </a>
         {{/each}}
+      </div>
+    </div>
+    <div class="latestBlogCol column small-10 large-5 text-center">
+      <h2 class="contactTitle">Latest blog</h2>
+      <div class="article column text-center">
+        <span class="date">{{blogs.one.date}}</span>
+        <h4 class="title">
+          <a href="/blog/{{blogs.one.uri}}">
+            {{blogs.one.title}}
+          </a>
+        </h4>
       </div>
     </div>
   </div>
