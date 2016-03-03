@@ -56,6 +56,10 @@
   }
   .brandContainer {
     padding: 1.5em 3em;
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
   }
 }
 
