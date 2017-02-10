@@ -3,8 +3,8 @@
     {
       "title": "StartCoding.org",
       "description":"A place to discover and share coding resources. Built with React and MongoDB. We ditched the flux pattern in favor of a lighter custom-built store/event emitter. DIY react router. Recursive comment components. Lots of fun!",
-      "repoLink":"https://github.com/robertsonsamuel/startcoding-backend",
-      "deployLink":"http://robertsonsamuel.github.io/startcoding-frontend",
+      "repoLink":"https://github.com/robertsonsamuel/startcoding-frontend",
+      "deployLink":"http://robertsonsamuel.github.io/startcoding-frontend/#/all",
       "imageUrl":"assets/img/projects/startCodingMac.png"
     },
   "2":
@@ -22,13 +22,5 @@
     "repoLink":"https://github.com/paulgoblin/greenit-frontend",
     "deployLink":"http://paulgoblin.github.io/greenit-frontend",
     "imageUrl":"assets/img/projects/greenitMac.png"
-  },
-  "4":
-  {
-    "title": "Tower of Hanoi",
-    "description":"The classic Tower of Hanoi game. Written using jQuery.",
-    "repoLink":"https://github.com/paulgoblin/towerOfHanoi",
-    "deployLink":"http://paulgoblin.github.io/towerOfHanoi",
-    "imageUrl":"assets/img/projects/towerofhanoi.png"
   }
 }
